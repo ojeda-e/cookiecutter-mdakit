@@ -100,8 +100,8 @@ class ExampleRepositoryDocumentation:
             "",  # github_host_account
             "My Name",  # author_name
             "my_example_email@gmail.com",  # author_email
-            "",  # dependency_source
-            "",  # include_ReadTheDocs
+            "3",  # dependency_source
+            "1",  # include_ReadTheDocs
             "MyAnalysisClass",  # template_analysis_class
         ]
 
@@ -114,7 +114,9 @@ class ExampleRepositoryDocumentation:
                 capture_output=True,
                 input="\n".join(inputs),
                 cwd=tmpdir,
+                check=True
             )
+
             source_repo = os.path.join(tmpdir, self.repo_name)
             destination_repo = str(self.example_repo_path.resolve())
             shutil.rmtree(destination_repo, ignore_errors=True)
