@@ -7,7 +7,7 @@ dependencies:
   - pip
 {% if cookiecutter.dependency_source == 'Prefer conda-forge over the default anaconda channel with pip fallback' %}
   # MDAnalysis
-  - mdanalysis
+  - MDAnalysis
 {% endif %}
   # Testing
   - pytest
